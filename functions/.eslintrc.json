@@ -1,0 +1,32 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended" 
+  ],
+  "plugins": ["node", "prettier"],
+  "settings": {
+    "node": {
+      "tryExtensions": [".ts", ".js"]
+    }
+  },
+  "rules": {
+    "no-unused-vars": "off",
+    "semi": ["error", "never"],
+    "node/no-missing-import": "error",
+    "capitalized-comments": "off",
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }], 
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/prefer-interface": "off",
+    "@typescript-eslint/no-object-literal-type-assertion": "off", // as const と相性が悪い
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "no-warning-comments": "off",
+    "valid-jsdoc": "off"
+  }
+}
