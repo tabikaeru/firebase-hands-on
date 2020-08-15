@@ -1,1 +1,1 @@
-DATABASE_URL='https://twitter-hands-on-live.firebaseio.com'
+DATABASE_URL='YOUR_DATABASE_URL'
