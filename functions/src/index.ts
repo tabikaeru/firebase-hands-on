@@ -1,9 +1,14 @@
 import * as functions from 'firebase-functions'
+import * as admin from 'firebase-admin'
 
-// Start writing Firebase Functions
-// https://firebase.google.com/docs/functions/typescript
+require('dotenv').config({ path: __dirname + '/../.env' })
 
+admin.initializeApp({
+  credential: admin.credential.cert(__dirname + '/../google-service-account.json'),
+  databaseURL: process.env.DATABASE_URL
+})
 export const helloWorld = functions.https.onRequest((request, response) => {
-  functions.logger.info('Hello logs!', { structuredData: true })
-  response.send('Hello from Firebase!')
+  const db = admin.firestore()
+  const batch = db.batch()
+  batch.set(db.collection('helloWorld').doc(), { hello: 'world' })
 })
