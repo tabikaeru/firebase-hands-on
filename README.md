@@ -30,7 +30,7 @@ export GOOGLE_APPLICATION_CREDENTIALS="path/to/google-service-account.json"
 
 .envExample を.env ファイルにリネームして，#を消して`YOUR_DATABASE_URL`の部分を自分の URL に置き換える.
 
-## firebae shell の起動
+## firebase shell の起動
 
 ```
  yarn shell
