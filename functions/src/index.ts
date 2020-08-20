@@ -20,7 +20,8 @@ export const helloWorldOnCall = functions.https.onCall(async (data, context) => 
   const db = admin.firestore()
 
   /*TASK: ここにfirestoreへの書き込みコードを書いてみよう！*/
-  db.collection('helloWorld')
+  await db
+    .collection('helloWorld')
     .doc()
     .set({ hello: 'world' })
 })
@@ -32,7 +33,8 @@ export const helloWorldOnCallWithArg = functions.https.onCall(async (data, conte
   /*TASK:ここに引数を読み込むコードを書いてみよう！*/
   const arg = data.arg as string
   /*TASK: ここに引数を使ったfirestoreへの書き込みコードを書いてみよう！*/
-  db.collection('helloWorld')
+  await db
+    .collection('helloWorld')
     .doc()
     .set({ hello: arg })
 })
